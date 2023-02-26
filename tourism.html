@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanuur Tourism</title>
+    <link rel="stylesheet"   href="tourism.css">
+    <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Kannur Tourism</a>
+        <div class="menu-btn">
+
+        </div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide"  src="1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="2.mov" autoplay muted loop></video>
+        <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+
+        
+        <div class="content">
+            <h1>Kannur Tourist<br><span>Places</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, vero! Reiciendis incidunt inventore voluptatibus, fuga odit perferendis alias laudantium, consequatur veritatis ullam eligendi. Facilis, labore libero. Eius iste voluptatibus eligendi.
+
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+
+    </section>
+
+    <script type="text/javascript">
+        //js of responsive navigation menu
+        const menuBtn =document.querySelector(".menu-btn");
+        const navigation =document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click",()=>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        })
+
+        //js for video slide navigation
+
+        const btns =document.querySelectorAll(".nav-btn");
+        const slides =document.querySelectorAll(".video-slide");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=> {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide)=> {
+                slide.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=>{
+            btn.addEventListener("click",()=>{
+                sliderNav(i);
+            })
+        })
+        
+    </script>
+    
+</body>
+</html>
